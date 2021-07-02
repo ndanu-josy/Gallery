@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 urlpatterns=[
   
     url(r'^$',views.home,name='home'),
-    url(r'^galllery$',views.my_projects,name='myGallery'),
+    url(r'^galllery$',views.my_gallery,name='myGallery'),
     
     
 
