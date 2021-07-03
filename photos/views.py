@@ -20,4 +20,9 @@ def search_images(request):
         message = "You haven't searched for any image category"
         return render(request, 'search.html',{"message":message})    
         
-
+def image(request,image_id):
+    try:
+        image = Image.objects.get(id = image_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"gallery.html", {"image":image})
