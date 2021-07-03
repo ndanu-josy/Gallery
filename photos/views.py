@@ -9,12 +9,12 @@ def my_gallery(request):
 
 def search_images(request):
 
-    if 'image' in request.GET and request.GET["image"]:
-        category = request.GET.get("image")
-        searched_image = Image.search_by_category(categoey)
-        message = f"{category}"
+    if 'category' in request.GET and request.GET["category"]:
+        images = request.GET.get("category")
+        searched_images = Image.search_by_category(images)
+        message = f"{images}"
 
-        return render(request, 'search.html',{"message":message,"image": searched_image})
+        return render(request, 'search.html',{"message":message,"photos": searched_images})
 
     else:
         message = "You haven't searched for any image category"

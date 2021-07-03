@@ -1,0 +1,33 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Gallery {{title}}</title>
+  {% else %}
+  <title> Gallery </title>
+  {% endif %}
+
+</head>
+
+<body>
+
+  <!-- navbar -->
+  {% include "navbar.html" %}
+  {% block content %}
+  <h1 class="text-center"> Gallery</h1>
+  {%endblock%}
+  <!-- bootstrap_css -->
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  {% endblock %}
+</body>
+
+</html>
