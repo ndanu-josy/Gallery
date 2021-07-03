@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Image
+from . models import Image,Location
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -21,8 +21,18 @@ def search_images(request):
         return render(request, 'search.html',{"message":message})    
         
 def image(request,image_id):
+
     try:
         image = Image.objects.get(id = image_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,"gallery.html", {"image":image})
+    return render(request,"image.html", {"image":image})
+
+def gallery(request):
+    images=Image.objects.all()
+    locations=Location.objects.all()
+    return render (request, 'gallery.html', {'images':images,'locations':locations})
+    
+def locations(request,location):
+    locations = Image.filterimageByLocation(location)
+    return render(request,'locations.html',{'locations':locations})

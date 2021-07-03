@@ -1,25 +1,35 @@
-{%extends 'base.html'%}
+<div class="" style="font-size: 20px; font-family: 'Itim', cursive;">
+    {%extends 'base.html' %}
 
- {% block content %}
+    {% block content %}
+    {{block.super}}
+ 
+    {%for location in locations %}
+    <a href="/location/{{location.name}}" class="pl-3"> {{location.name}}</a>
+    {%endfor%}
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            {%for image in images%}
+            <div class="col-md-3 mb-3">
 
- <div class="container">
+                <!--Card-->
+                <div class="card">
 
-   <div class="row">
-     <img src="{{image.image.url}}"  class="img-responsive" alt="">
-   </div>
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <a data-toggle="modal" data-target="#picId{{photo.id}}">
+                            <img src="{{photo.image.url}}" class="card-img-top img-responsive styled" alt=" image"
+                                width="100px">
+                        </a>
+                    </div>
 
-   <div class="row">
-     <h1 class="text-center">{{image.name}}</h1>
-   </div>
 
-   <div class="row">
-     <p>{{image.description}}</p>
-   </div>
+                </div>
 
-   <div class="row">
-     <p>Location {{image.location}}</p>
-   </div>
-
- </div>
-
- {% endblock %}
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+{%endblock%}
