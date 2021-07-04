@@ -62,7 +62,10 @@ class Image(models.Model):
         image = cls.objects.filter(category__name__icontains=category)
         return image
       
-
+    @classmethod
+    def get_image_by_location(cls,location):
+        location = cls.objects.filter(location__name = location).all()
+        return location
 
 
 

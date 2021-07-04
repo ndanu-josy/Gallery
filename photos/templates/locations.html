@@ -1,0 +1,22 @@
+{%extends 'base.html' %}
+
+{% block content %}
+{{block.super}}
+
+<div class="container">
+    
+    <div class="row">
+
+        {%for location in locations%}
+
+        <div class="col-md-3 mb-3px "style="height:200px; width:200px">
+            <div class="panel panel-default" >
+                <img src="{{location.image.url}}" class="card-img-top img-responsive styled" alt=" image" height="300px">
+
+            </div>
+
+        </div>
+        {% endfor %}
+        {% endblock %}
+    </div>
+</div>
