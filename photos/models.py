@@ -50,7 +50,7 @@ class Image(models.Model):
     @classmethod
     def update_image(cls, id, image):
         cls.objects.filter(id = id).update(image=image)
-        self.update()
+        
 
     @classmethod
     def get_image_by_id(cls,id):
