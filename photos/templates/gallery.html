@@ -29,9 +29,9 @@
 
 <body>
 
-    <div class="container jumbotron text-center">
+    <div class="container text-center">
         {%for location in locations %}
-        <a class="btn btn-info" href="/location/{{location.name}}">{{location}}</a>
+        <a class="btn btn-primary btn-lg" href="/location/{{location.name}}">{{location}}</a>
         {% endfor %}
     </div>
     <br>
@@ -43,6 +43,7 @@
                     <img src="{{ image.image.url}}" class="img-responsive" alt="{{image.name}}"
                         style="height:300px; width:300px">
                 </a>
+                <p class="text-center"></p>
 
                 <div class="modal fade" id="{{ image.id}}" role="dialog">
                     <div class="modal-dialog">
