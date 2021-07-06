@@ -31,7 +31,7 @@ python3.8 manage.py runserver
 python3 manage.py test photos
 
 # Live Site 
-View [live]()
+View [live](https://josgallery.herokuapp.com/)
 
 ## Technologies Used
 1. Python 3.8
