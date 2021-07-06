@@ -4,17 +4,16 @@
 {{block.super}}
 
 <div class="container">
-    
-    <div class="row">
 
+    <div class="row">
+        <h1 class="text-primary"> These are all the images for the location</h1>
         {%for location in locations%}
 
-        <div class="col-md-3 mb-3px "style="height:200px; width:200px">
-            <div class="panel panel-default" >
-                <img src="{{location.image.url}}" class="card-img-top img-responsive styled" alt=" image" height="300px">
+        <div class="col-md-3">
 
-            </div>
-
+            <img src="{{location.image.url}}" class="img-responsive" alt="{{image.name}}"
+                style="height:350px; width:500px">
+            <p class="text-primary text-center"> {{location.location}}</p>
         </div>
         {% endfor %}
         {% endblock %}

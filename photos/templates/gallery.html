@@ -9,19 +9,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <style>
         body {
-            background-image: url('https://images.unsplash.com/photo-1625119161833-57f8a7009f7b?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+            background-image: url('https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-        }
-
-        .row {
-            margin-top: 30px;
-            margin-bottom: 30px
         }
     </style>
 
@@ -29,19 +27,23 @@
 
 <body>
 
-    <div class="container text-center">
+    <div class="container text-center text-primary" style="font-family: 'Kaushan Script', cursive;">
+        <h1>Gallery</h1>
+        <h2>Welcome to your <span>One-Stop Gallery</span> All pictures in one place</h2>
         {%for location in locations %}
         <a class="btn btn-primary btn-lg" href="/location/{{location.name}}">{{location}}</a>
         {% endfor %}
     </div>
+
     <br>
-    <div class="container jumbotron " style="background-color:#ffe8d6;">
+    <div class="container jumbotron text-center " style="background-color:#ffe8d6;">
+
         <div class="row">
             {% for image in images%}
-            <div class="col-md-3 col-sm-4 ">
+            <div class="col-md-3  ">
                 <a href="#{{ image.id}}" data-toggle="modal" data-target="#{{ image.id}}">
                     <img src="{{ image.image.url}}" class="img-responsive" alt="{{image.name}}"
-                        style="height:300px; width:300px">
+                        style="height:350px; width:500px">
                 </a>
                 <p class="text-center"></p>
 
