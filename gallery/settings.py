@@ -17,9 +17,9 @@ import cloudinary.uploader
 import cloudinary.api
 
 cloudinary.config(
-  cloud_name = "dqvarhwzn",
-  api_key = "811246556949398",
-  api_secret = "YE5NEj5BxfH8Uezhhx1MgbYSoqU",
+  cloud_name = "jos254",
+  api_key = "888584575498376",
+  api_secret = "jS8SX99ro6Cecs2oUxLshigg5ug",
   secure = True
 )
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos.apps.PhotosConfig',
     'bootstrap3',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
