@@ -31,7 +31,7 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()  
 
-# class Image(models.Model):
+class Image(models.Model):
 #     image = models.ImageField(upload_to='images/')
     image = CloudinaryField('images')
     name = models.CharField(max_length=100)
